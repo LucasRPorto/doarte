@@ -1,0 +1,11 @@
+.quemSomos__titulo{
+
+    margin-bottom: 1rem;
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 51px;
+    line-height: 90px;
+
+    color: rgb(105, 196, 44);
+}

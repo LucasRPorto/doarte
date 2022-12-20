@@ -1,0 +1,11 @@
+.rodape__item{
+    text-align: center;
+    background: rgb(255,255,255);
+    background: linear-gradient(166deg, rgba(255,255,255,1) 0%, rgba(155,231,255,1) 83%);   
+    
+}
+
+.rodape__item li a{
+    text-decoration: none;
+    color: blue;
+}
