@@ -1,12 +1,10 @@
-const url = "http://localhost:8080/doador"
+const urlApi = "http://localhost:8080/doador"
 
-function getUser(){
-    axios.get(url)
-    .then(response =>{
-        const data = response.data
-        doadoresCadastrados.textContent = JSON.stringify(data)
+const btnDoacao = document.querySelectorAll('.kit__botao')
+
+btnDoacao.forEach((btnDoado) => {
+    btnDoado.addEventListener('click', (evento)=> {
+        evento.preventDefault();
+        window.location.href = '../pages/form-cadastro.html';
     })
-    .catch(error => console.log(error))
-}
-
-getUser()
+})
