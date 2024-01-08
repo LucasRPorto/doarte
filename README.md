@@ -1,6 +1,5 @@
 ## Projeto Doarte
 
-> Utilizando o atual projeto para a implementação de uma página de doações.
+> Projeto de arrecadação de doações com intuito apenas de aprendizado.
 
-- Implementado o HTML e CSS para a página inicial.
-- Atualizando o projeto para um repositório a parte.
+- Necessário rodar o projeto Doarte API, para que as requisições de POST e GET de cadastro de usuários sejam realizados para a API.
