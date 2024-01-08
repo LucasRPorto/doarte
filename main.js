@@ -1,7 +1,32 @@
 const urlApi = "http://localhost:8080/doador";
 const btnDoacao = document.querySelectorAll('.kit__botao');
 const btnCadastroDoador = document.querySelector('.cadastrar-form');
-const formularioCadastro = document.querySelector('.formularioCadastro');
+const form = document.querySelector('.formularioCadastro');
+const inputCep = document.getElementById("cep");
+
+cep.addEventListener('blur', () => {
+    requisicaoViaCep();
+
+})
+
+async function requisicaoViaCep(){
+
+    if(cep.value && cep.value.length == 8){
+
+    const requisicao = await fetch(`https://viacep.com.br/ws/${cep.value}/json/`);
+
+    if(!requisicao.ok){
+        throw new Error('Erro ao realizar requisição');
+    }
+    const data = await requisicao.json();
+    console.log(data);
+
+    form.elements['rua'].value = data.logradouro;
+    form.elements['bairro'].value = data.bairro;
+    form.elements['cidade'].value = data.localidade;
+    form.elements['uf'].value = data.uf;
+    }
+}
 
 btnDoacao.forEach((btnDoado) => {
     btnDoado.addEventListener('click', (evento)=> {
@@ -16,7 +41,6 @@ async function buscaDoadores(){
     const retornoJson = await retornoGet.json()
     console.log(retornoJson);
 }
-// Testando GET da API doarte
 
 async function cadastraDoador(doador) {
     try {
@@ -41,11 +65,8 @@ async function cadastraDoador(doador) {
     }
 }
 
-
-formularioCadastro.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
-
-    const form = document.querySelector('.formularioCadastro');
 
     const nome = form.elements['nome'].value;
     const email = form.elements['email'].value;
@@ -75,5 +96,5 @@ formularioCadastro.addEventListener('submit', (event) => {
         }
     }
     cadastraDoador(doador);
-    formularioCadastro.reset();
+    form.reset();
 });
