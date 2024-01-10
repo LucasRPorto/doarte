@@ -1,6 +1,33 @@
-import {cadastraDoador} from "../main.js";
+
 const cep = document.getElementById("cep");
 const form = document.querySelector('.formularioCadastro');
+const urlApi = "http://localhost:8080/doador";
+
+
+async function cadastraDoador(doador) {
+    try {
+        const resposta = await fetch(urlApi, {
+            method: "POST",
+            body: JSON.stringify(doador),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        });
+        const codigoResposta = resposta.status;
+
+        console.log(`Código de resposta: ${codigoResposta}`);
+
+        if (resposta.ok) {
+            console.log('Dados recebidos:', doador);
+            window.location.href = './pages/conclusaoCadastro.html'
+        } else {
+            console.error('Erro na requisição:', resposta.statusText);
+            apresentaToastr("erroCadastro");
+        }
+    } catch (erro) {
+        console.error('Erro na requisição:', erro.message);
+    }
+}
 
 cep.addEventListener('blur', () => {
     requisicaoViaCep();
@@ -59,3 +86,20 @@ async function requisicaoViaCep(){
     form.elements['uf'].value = data.uf;
     }
 }
+
+export function apresentaToastr(tipoToastr){
+    
+    if(tipoToastr == "erroCadastro"){
+        toastr.error('Ocorreu um problema ao processar o seu cadastro. Tente novamente.', {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-top-full-width',
+            timeOut: 0,
+            extendedTimeOut: 0,
+            tapToDismiss: false
+        });
+    }else if(tipoToastr == "atencaoCadastro"){
+        console.log("")
+    }
+}
+

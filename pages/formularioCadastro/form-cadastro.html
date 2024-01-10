@@ -7,28 +7,31 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Doarte</title>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link href="../assets/css/normalize.css" rel="stylesheet" />
-        <link href="../assets/css/reset.css" rel="stylesheet" />
-        <link href="../assets/css/cabecalho.css" rel="stylesheet" />
-        <link href="../assets/css/menu/menu-lista.css" rel="stylesheet" />
-        <link href="../assets/css/menu/menu-item.css" rel="stylesheet" />
-        <link href="../assets/css/menu/menu-link.css" rel="stylesheet" />
-        <link href="../assets/css/rodape/rodape.css" rel="stylesheet">
-        <link href="../assets/css/rodape/rodape-item.css" rel="stylesheet">
-        <link href="../assets/css/rodape/rodape-imagem.css" rel="stylesheet">
-        <link href="../assets/css/rodape/rodape-nome.css" rel="stylesheet">
-        <link href="../assets/css/form.css" rel="stylesheet">
+        <link href="../../assets/css/normalize.css" rel="stylesheet" />
+        <link href="../../assets/css/reset.css" rel="stylesheet" />
+        <link href="../../assets/css/cabecalho.css" rel="stylesheet" />
+        <link href="../../assets/css/menu/menu-lista.css" rel="stylesheet" />
+        <link href="../../assets/css/menu/menu-item.css" rel="stylesheet" />
+        <link href="../../assets/css/menu/menu-link.css" rel="stylesheet" />
+        <link href="../../assets/css/rodape/rodape.css" rel="stylesheet">
+        <link href="../../assets/css/rodape/rodape-item.css" rel="stylesheet">
+        <link href="../../assets/css/rodape/rodape-imagem.css" rel="stylesheet">
+        <link href="../../assets/css/rodape/rodape-nome.css" rel="stylesheet">
+        <link href="./form.css" rel="stylesheet">
+
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik+Distressed&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     </head>
     <body>
         <header class="cabecalho">
-            <a href="../index.html"><img class="logo" src="../assets/img/logo.png" alt="Logo Doarte"></a>
+            <a href="../../index.html"><img class="logo" src="../../assets/img/logo.png" alt="Logo Doarte"></a>
             <nav class="menu">
                 <ul class="menu__lista">
-                    <li class="menu__item"><a class="menu__link" href="../index.html">Inicio</a></li>
-                    <li class="menu__item"><a class="menu__link" href="../index.html">Sobre Nós</a></li>
+                    <li class="menu__item"><a class="menu__link" href="../../index.html">Inicio</a></li>
+                    <li class="menu__item"><a class="menu__link" href="../../index.html">Sobre Nós</a></li>
                     <li class="menu__item"><a class="menu__link" href="#footer">Contato</a></li>
                     <li class="menu__item"><a class="menu__link" href="#kits">Doe Agora</a></li>
                 </ul>
@@ -36,6 +39,7 @@
         </header>
 
         <main>
+          <h2 class="title-form">Realize seu cadastro para concluir a doação</h2>
             <form action="http://localhost:8080/doador" method="post" class="formularioCadastro">
                 <li>
                   <label for="nome">Nome:</label>
@@ -91,12 +95,13 @@
         <footer id="footer">
             <nav class="rodape">
                 <ul class=rodape__item>
-                    <li ><a href="https://www.instagram.com/lucass_rporto/"><img class="rodape__imagem" src="../assets/img/footer/instagram.png"> Instagram</a></li>
-                    <li ><a href="https://www.linkedin.com/in/lucas-rodrigues-porto-240064205/"><img class="rodape__imagem" src="../assets/img/footer/linkedin.png">Linkedin</a></li>
-                    <li ><a href="https://wa.me/5562993493078"><img class="rodape__imagem" src="../assets/img/footer/whats.png">WhatsApp</a></li>
+                    <li ><a href="https://www.instagram.com/lucass_rporto/"><img class="rodape__imagem" src="../../assets/img/footer/instagram.png"> Instagram</a></li>
+                    <li ><a href="https://www.linkedin.com/in/lucas-rodrigues-porto-240064205/"><img class="rodape__imagem" src="../../assets/img/footer/linkedin.png">Linkedin</a></li>
+                    <li ><a href="https://wa.me/5562993493078"><img class="rodape__imagem" src="../../assets/img/footer/whats.png">WhatsApp</a></li>
                 </ul>
             </nav>
         </footer>
-      <script type="module" src="./cadastro.js"></script>
+        
+      <script type="module" src="cadastro.js"></script>
     </body>
 </html>
