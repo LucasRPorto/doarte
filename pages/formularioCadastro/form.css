@@ -1,43 +1,98 @@
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    list-style-type: none;
+.title-form {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Ajuste do tamanho do formulário */
+.formularioCadastro {
+    width: 60%; /* Reduzido de 80% para 60% */
+    margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  li {
-    margin-bottom: 20px;
-  }
-  label {
+    background-color: #f9f9f9;
+}
+
+/* Estilo dos campos do formulário */
+.formularioCadastro li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.formularioCadastro label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+    font-weight: bold;
     color: #333;
-  }
-  input, select {
+}
+
+.formularioCadastro input[type="text"],
+.formularioCadastro input[type="email"],
+.formularioCadastro input[type="tel"],
+.formularioCadastro input[type="date"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.formularioCadastro input[type="text"]:focus,
+.formularioCadastro input[type="email"]:focus,
+.formularioCadastro input[type="tel"]:focus,
+.formularioCadastro input[type="date"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.formularioCadastro button {
+    padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
-  button:hover {
-    background-color: #45a049;
-  }
+    margin-top: 10px;
+}
 
-  .title-form{
-    text-align: center;
-    padding-bottom: 2rem;
+.next-step {
+    background-color: #007bff;
+    color: white;
+}
 
-  }
+.prev-step {
+    background-color: #dc3545;
+    color: white;
+    margin-right: 10px;
+}
+
+.cadastrar-form {
+    background-color: #28a745;
+    color: white;
+}
+
+.next-step:hover {
+    background-color: #0056b3;
+}
+
+.prev-step:hover {
+    background-color: #c82333;
+}
+
+.cadastrar-form:hover {
+    background-color: #218838;
+}
+
+/* Oculta os steps que não estão ativos */
+.form-step {
+    display: none;
+}
+
+.form-step--active {
+    display: block;
+}

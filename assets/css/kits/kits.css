@@ -1,8 +1,11 @@
-.kits{   
+.kits {
     display: flex;
-    flex-wrap: wrap; /* Quebra os elementos de linha em linha */
-    padding: 3rem 0 0 5rem;
-    margin: 0 5% 0 5%;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha, se necessário */
+    justify-content: center; /* Centraliza os kits horizontalmente */
+    align-items: flex-start; /* Alinha os kits ao topo */
+    gap: 20px; /* Espaçamento entre os kits */
+    padding: 3rem 0;
+    margin: 0 auto; /* Centraliza o contêiner na página */
     text-align: center;
 }
 

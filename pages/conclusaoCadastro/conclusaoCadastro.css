@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+.cabecalho {
+    background-color: #4CAF50;
+    padding: 10px 0;
+}
+
+.cabecalho .logo {
+    height: 50px;
+}
+
+.agradecimento {
+    padding: 50px 20px;
+}
+
+.mensagem h1 {
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+.mensagem p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.botao-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.botao-voltar:hover {
+    background-color: #45a049;
+}
+
+.redes-sociais {
+    margin-top: 40px;
+}
+
+.redes-sociais h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.redes {
+    list-style: none;
+    padding: 0;
+}
+
+.redes li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.redes a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+}
+
+.redes img {
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.rodape {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 50px;
+}

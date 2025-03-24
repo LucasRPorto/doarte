@@ -1,8 +1,65 @@
-
 const cep = document.getElementById("cep");
 const form = document.querySelector('.formularioCadastro');
 const urlApi = "http://localhost:8080/doador";
 
+document.addEventListener("DOMContentLoaded", () => {
+    const steps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-bar__step");
+    const nextStepBtn = document.querySelector(".next-step");
+    const prevStepBtn = document.querySelector(".prev-step");
+    const form = document.getElementById("formularioCadastro");
+    let currentStep = 0;
+
+    // Atualiza a exibição dos steps e a barra de progresso
+    function updateSteps() {
+        steps.forEach((step, index) => {
+            step.style.display = index === currentStep ? "block" : "none";
+        });
+        progressSteps.forEach((step, index) => {
+            step.classList.toggle("progress-bar__step--active", index <= currentStep);
+        });
+    }
+
+    // Valida os campos obrigatórios do step atual
+    function validateStep(stepIndex) {
+        const inputs = steps[stepIndex].querySelectorAll("input[required]");
+        for (const input of inputs) {
+            if (!input.checkValidity()) {
+                input.reportValidity();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Avança para o próximo step
+    nextStepBtn.addEventListener("click", () => {
+        if (validateStep(currentStep)) {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                updateSteps();
+            }
+        }
+    });
+
+    // Volta para o step anterior
+    prevStepBtn.addEventListener("click", () => {
+        if (currentStep > 0) {
+            currentStep--;
+            updateSteps();
+        }
+    });
+
+    // Valida o último step antes de enviar o formulário
+    form.addEventListener("submit", (event) => {
+        if (!validateStep(currentStep)) {
+            event.preventDefault();
+        }
+    });
+
+    // Inicializa a exibição dos steps
+    updateSteps();
+});
 
 async function cadastraDoador(doador) {
     try {
@@ -19,7 +76,7 @@ async function cadastraDoador(doador) {
 
         if (resposta.ok) {
             console.log('Dados recebidos:', doador);
-            window.location.href = './pages/conclusaoCadastro.html'
+            window.location.href = '../../pages/conclusaoCadastro/conclusaoCadastro.html'
         } else {
             console.error('Erro na requisição:', resposta.statusText);
             apresentaToastr("erroCadastro");
