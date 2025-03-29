@@ -22,6 +22,16 @@
                 <h1>Obrigado por sua doação!</h1>
                 <p>Sua generosidade faz a diferença na vida de muitas pessoas. A equipe Doarte agradece imensamente por sua contribuição.</p>
                 <p>Você receberá um e-mail com os detalhes da sua doação em breve.</p>
+                
+                <div class="qrcode-container">
+                    <p>Use o QR Code abaixo para realizar o pagamento:</p>
+                    <img id="qrcode" alt="QR Code de Pagamento" />
+                    <p id="qrcode-text" class="qrcode-text">
+                        <strong>Código do QR Code:</strong><br />
+                        <span id="qrcode-value"></span>
+                    </p>
+                </div>
+
                 <a href="../../index.html" class="botao-voltar">Voltar à Página Inicial</a>
             </section>
             <section class="redes-sociais">
@@ -37,5 +47,24 @@
         <footer class="rodape">
             <p>&copy; 2025 Doarte. Todos os direitos reservados.</p>
         </footer>
+
+        <script>
+            const qrCodeBase64 = localStorage.getItem('qrCodeBase64');
+            const qrCodeText = localStorage.getItem('qrCode');
+
+            if (qrCodeBase64) {
+                const qrCodeImg = document.getElementById('qrcode');
+                qrCodeImg.src = `data:image/png;base64,${qrCodeBase64}`;
+            } else {
+                console.error('QR Code não encontrado no localStorage.');
+            }
+
+            if (qrCodeText) {
+                const qrCodeValueElement = document.getElementById('qrcode-value');
+                qrCodeValueElement.textContent = qrCodeText;
+            } else {
+                console.error('Texto do QR Code não encontrado no localStorage.');
+            }
+        </script>
     </body>
 </html>

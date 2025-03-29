@@ -25,6 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik+Distressed&display=swap"
         rel="stylesheet">
     <link href="./progress-bar.css" rel="stylesheet">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 
 <body>
@@ -54,6 +55,14 @@
                 <li>
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
+                </li>
+                <li>
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" required>
+                </li>
+                <li>
+                    <label for="identificationNumber">Número do CPF</label>
+                    <input id="form-checkout__identificationNumber" name="identificationNumber" type="text">
                 </li>
                 <li>
                     <label for="email">Email:</label>
@@ -99,6 +108,11 @@
                     <input type="text" id="complemento" name="complemento">
                 </li>
                 <button type="button" class="prev-step">Voltar</button>
+
+                <div id="loading-indicator" style="display: none; text-align: center; margin-top: 20px;">
+                    <p>Processando, por favor aguarde...</p>
+                </div>
+
                 <button class="cadastrar-form" type="submit">Cadastrar</button>
             </div>
         </form>

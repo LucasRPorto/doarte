@@ -4,9 +4,8 @@
   color: #555;
 }
 
-/* Ajuste do tamanho do formulário */
 .formularioCadastro {
-    width: 60%; /* Reduzido de 80% para 60% */
+    width: 60%; 
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -15,7 +14,6 @@
     background-color: #f9f9f9;
 }
 
-/* Estilo dos campos do formulário */
 .formularioCadastro li {
     list-style: none;
     margin-bottom: 15px;
@@ -88,7 +86,6 @@
     background-color: #218838;
 }
 
-/* Oculta os steps que não estão ativos */
 .form-step {
     display: none;
 }

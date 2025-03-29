@@ -82,3 +82,31 @@ body {
     padding: 10px 0;
     margin-top: 50px;
 }
+
+.qrcode-container img {
+    max-width: 200px; 
+    max-height: 200px;
+    width: auto;
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+}
+
+.qrcode-text {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px; 
+    word-break: break-word; 
+}
+
+.qrcode-text strong {
+    font-weight: bold;
+}
+
+.qrcode-text span {
+    display: block; 
+    margin-top: 5px; 
+    font-size: 14px;
+    color: #555; 
+}

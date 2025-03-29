@@ -79,7 +79,7 @@
 
                     <div class="kit__conteudo">
                         <p class="kit__descricao">Toda criança merece aproveitar a infância com muita brincadeira e alegria.</p>
-                        <a href="">
+                        <a href="#" class="kit__botao" data-nome="brinquedo" data-valor="20">
                             <div class="kit__botao">
                                 Doe R$ 20,00
                             </div>
@@ -95,7 +95,7 @@
 
                     <div class="kit__conteudo">
                         <p class="kit__descricao">Ajude a reduzir a fome do mundo, contribue doando uma cesta básica.</p>
-                        <a href="">
+                        <a href="#" class="kit__botao" data-nome="alimentação" data-valor="40">
                             <div class="kit__botao">
                                 Doe R$ 40,00
                             </div>
@@ -112,7 +112,7 @@
                     <div class="kit__conteudo">
                         <p class="kit__descricao">Incetive as atividades esportivas e ofereça um futuro melhor para crianças e jovens.</p>
                         
-                        <a href="">
+                        <a href="#" class="kit__botao" data-nome="esporte" data-valor="60">
                             <div class="kit__botao">
                                 Doe R$ 60,00
                             </div>
@@ -149,12 +149,27 @@
         <footer id="footer">
             <nav class="rodape">
                 <ul class=rodape__item>
-                    <li ><a href="https://www.instagram.com/lucass_rporto/"><img class="rodape__imagem" src="./assets/img/footer/instagram.png"> Instagram</a></li>
-                    <li ><a href="https://www.linkedin.com/in/lucas-rodrigues-porto-240064205/"><img class="rodape__imagem" src="./assets/img/footer/linkedin.png">Linkedin</a></li>
+                    <li ><a href="https://www.instagram.com/"><img class="rodape__imagem" src="./assets/img/footer/instagram.png"> Instagram</a></li>
+                    <li ><a href="https://www.linkedin.com/"><img class="rodape__imagem" src="./assets/img/footer/linkedin.png">Linkedin</a></li>
                     <li ><a href="https://wa.me/5562993493078"><img class="rodape__imagem" src="./assets/img/footer/whats.png">WhatsApp</a></li>
                 </ul>
             </nav>
         </footer>
+        <script>
+            document.querySelectorAll('.kit__botao').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+
+                    const nomeProduto = button.getAttribute('data-nome');
+                    const valor = button.getAttribute('data-valor');
+
+                    localStorage.setItem('nomeProduto', nomeProduto);
+                    localStorage.setItem('valor', valor);
+
+                    window.location.href = './pages/formularioCadastro/form-cadastro.html';
+                });
+            });
+        </script>
         <script src="main.js" type="module"></script>
     </body>
 </html>
